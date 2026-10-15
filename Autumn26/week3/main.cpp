@@ -10,6 +10,7 @@ int main(){
   std::cin >> b;
   std::cin >> c;
   int n = 0;
+  //n is the number of common sides
   if (a == b || b == c || a == c) {
     if (a == c && a == b) {
       n = 2;
@@ -36,12 +37,12 @@ int main(){
     std::cout << "This triangle is possible. " << idk << " with a perimeter of " << perimeter << " units and an area of " << area << " square units!\n";    
   }
   
-  
+     
   return 0;
 }//*/
  
 //Valid Chess Move
-/*/
+//
 #include <iostream>
 
 struct coordinate {
@@ -54,15 +55,82 @@ int main() {
   int x,y;
   std::cin >> x;
   std::cin >> y;
-  auto knight = coordinate {x,y};
+  bool isxinvalid = ((x<1) || (x>8));
+  while (isxinvalid) {
+    std::cout << "x coordinate is invalid, please enter a new one: ";
+    std::cin >> x;
+    isxinvalid = ((x<1) || (x>8));
+  }
+  bool isyinvalid = ((y<1) || (y>8));
+  while (isyinvalid) {
+    std::cout << "y coordinate is invalid, please enter a new one: ";
+    std::cin >> y;
+    isyinvalid = ((y<1) || (y>8));
+  }
+  coordinate knight = coordinate {x,y};
   std::cout << "Please enter the x and y coordinate of the destination for your knight: ";
   std::cin >> x;
   std::cin >> y;
-  auto destination = coordinate {x,y};
+  isxinvalid = ((x<1) || (x>8));
+  while (isxinvalid) {
+    std::cout << "x coordinate is invalid, please enter a new one: ";
+    std::cin >> x;
+    isxinvalid = ((x<1) || (x>8));
+  }
+  isyinvalid = ((y<1) || (y>8));
+  while (isyinvalid) {
+    std::cout << "y coordinate is invalid, please enter a new one: ";
+    std::cin >> y;
+    isyinvalid = ((y<1) || (y>8));
+  }
+
+  coordinate destination = coordinate {x,y};
   bool valid = false;
   if ((knight.x - destination.x)*(knight.x - destination.x) + (knight.y - destination.y)*(knight.y - destination.y) == 5) {valid = true;}
   if (valid) {std::cout << "Your move is valid!\n";}
   else {std::cout << "Your move is NOT valid\n";}
+  
+  //Bishop
+  std::cout << "Please enter the x and y coordinate of the bishop: ";
+  std::cin >> x;
+  std::cin >> y;
+  isxinvalid = ((x<1) || (x>8));
+  while (isxinvalid) {
+    std::cout << "x coordinate is invalid, please enter a new one: ";
+    std::cin >> x;
+    isxinvalid = ((x<1) || (x>8));
+  }
+  isyinvalid = ((y<1) || (y>8));
+  while (isyinvalid) {
+    std::cout << "y coordinate is invalid, please enter a new one: ";
+    std::cin >> y;
+    isyinvalid = ((y<1) || (y>8));
+  }
+  coordinate bishop = coordinate {x,y};
+  std::cout << "Please enter the x and y coordinate of the destination for your bishop: ";
+  std::cin >> x;
+  std::cin >> y;
+  isxinvalid = ((x<1) || (x>8));
+  while (isxinvalid) {
+    std::cout << "x coordinate is invalid, please enter a new one: ";
+    std::cin >> x;
+    isxinvalid = ((x<1) || (x>8));
+  }
+  isyinvalid = ((y<1) || (y>8));
+  while (isyinvalid) {
+    std::cout << "y coordinate is invalid, please enter a new one: ";
+    std::cin >> y;
+    isyinvalid = ((y<1) || (y>8));
+  }
+  destination = coordinate {x,y};
+  valid = false;
+  if ((bishop.x - destination.x)*(bishop.x - destination.x) == (bishop.y - destination.y)*(bishop.y - destination.y)) {valid = true;}
+  if (valid) {
+    std::cout << "Your move is valid\n";
+  }
+  else {
+    std::cout << "Your move is not valid\n";
+  }
   
   return 0;
 }//*/
@@ -123,6 +191,7 @@ int main() {
 
 //Current max and min
 
+/*
 #include <iostream>
 
 int main() {
@@ -142,4 +211,4 @@ int main() {
   }
 
   return 0;
-}
+}*/
