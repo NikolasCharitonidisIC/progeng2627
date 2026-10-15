@@ -41,6 +41,7 @@ int main(){
 }//*/
  
 //Valid Chess Move
+/*/
 #include <iostream>
 
 struct coordinate {
@@ -63,5 +64,82 @@ int main() {
   if (valid) {std::cout << "Your move is valid!\n";}
   else {std::cout << "Your move is NOT valid\n";}
   
+  return 0;
+}//*/
+
+
+//3.1
+/*/
+#include <iostream>
+
+int main(){
+  int n = 1;
+  double total = 0;
+  int counter = 0;
+  while (n != 0) {
+    if (counter == 0) std::cin >> n;
+    total += n;
+    counter ++;
+    std::cout << "The average number so far is " << total/counter << ".\n";
+    std::cin >> n;
+  }
+
+  return 0;
+}//*/
+
+//for loops
+/*/
+#include <iostream>
+
+int main() {
+  int n;
+  std::cin >> n;
+  int total = 1;
+  for (int i=1;i<=n;i++) {total *= i;}
+  if (n == 0) {total = 1;}
+  std::cout << n << "! = " << total << std::endl;
+
+  return 0;
+}//*/
+
+
+//nested loops
+/*/
+#include <iostream>
+
+int main() {
+  int n;
+  std::cin >> n;
+  for (int row = 1; row <= n; row++){
+    for (int col = 1;col <=n; col++){
+      std::cout << row * col << "\t";
+    }
+    std::cout << std::endl;
+  }
+  
+
+  return 0;
+}//*/
+
+//Current max and min
+
+#include <iostream>
+
+int main() {
+  int n, max, min;
+  std::cout << "Please enter a number: ";
+  std::cin >> n;
+  max = n;
+  min = n;
+  
+  std::cout << "The current maximum is " << max << " and the minimum is " << min << std::endl;
+  while (n != 0) {
+    std::cout << "Please enter a number: ";
+    std::cin >> n;
+    if (n > max) {max = n;}
+    if (n < min) {min = n;}
+    std::cout << "The current maximum is " << max << " and the minimum is " << min << std::endl; 
+  }
+
   return 0;
 }
