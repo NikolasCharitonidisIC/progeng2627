@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
+//#include <vector>
 
 int main(int argc, char* argv[]){
   std::ifstream myFile;
@@ -14,6 +14,6 @@ int main(int argc, char* argv[]){
   }
   std::cout << std::endl;
 
+  
 
-  return 0;
 }
